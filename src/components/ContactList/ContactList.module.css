@@ -1,0 +1,21 @@
+.name_text {
+  margin-right: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.list_item {
+  display: flex;
+}
+
+.btn {
+  margin-left: auto;
+  width: 85px;
+}
+
+.list {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
