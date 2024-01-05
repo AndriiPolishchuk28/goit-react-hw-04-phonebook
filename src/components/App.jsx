@@ -53,9 +53,7 @@ export const App = () => {
       <ContactForm addHandle={addName} />
       <h2>Contacts</h2>
       <Filter onChange={handleOnChange} />
-      {contacts.length === 0 ? (
-        <ContactList onDelete={deleteContact} contacts={visibleContacts()} />
-      ) : null}
+      <ContactList onDelete={deleteContact} contacts={visibleContacts()} />
     </div>
   );
 };
