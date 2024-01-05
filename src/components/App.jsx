@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 
 export const App = () => {
   const [contacts, setContacts] = useState(
-    JSON.parse(localStorage.getItem('contacts') ?? [])
+    JSON.parse(localStorage.getItem('contacts')) ?? []
   );
   const [filter, setFilter] = useState('');
 
@@ -50,10 +50,12 @@ export const App = () => {
   return (
     <div style={{ marginLeft: '30px' }}>
       <h1>Phonebook</h1>
-      <ContactForm contacts={contacts} addHandle={addName} />
+      <ContactForm addHandle={addName} />
       <h2>Contacts</h2>
       <Filter onChange={handleOnChange} />
-      <ContactList onDelete={deleteContact} contacts={visibleContacts()} />
+      {contacts.length === 0 ? (
+        <ContactList onDelete={deleteContact} contacts={visibleContacts()} />
+      ) : null}
     </div>
   );
 };
